@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://guardpact.app/windows">
+<meta name="description" content="가드팩트 Windows PC 앱 내려받기 — 자녀 PC 사용 시간 제한·앱 차단을 휴대폰과 같은 계정으로. 늘 최신 설치 파일과 설치 방법.">
+<title>가드팩트(GuardPact) Windows PC 앱 내려받기 — 자녀 PC 사용시간 관리</title>
+<!-- W-192 — Android 「홈페이지 및 Windows 앱 다운로드」가 여는 쪽. 단추는 API 고정 주소(/download/windows → 판 정책 최신 302)라
+     판이 바뀌어도 이 쪽을 다시 낼 일이 없다. 판 번호 · SHA-256 은 표시용으로만 읽는다(못 읽어도 단추는 동작).
+     금액 · 구매 안내는 두지 않는다(Play 결제 정책 — 앱에서 여는 쪽). -->
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F7F4ED;color:#15140F;-webkit-font-smoothing:antialiased;font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:17px;line-height:1.85;letter-spacing:-0.01em}
+  a{color:#1E4F38;text-decoration:none}
+  a:hover{color:#15140F}
+  header{border-bottom:1px solid #E5DFD1}
+  .wrap{max-width:46rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+  header .wrap{padding-top:1.1rem;padding-bottom:1.1rem}
+  .logo{font-family:'Noto Serif KR',serif;font-weight:600;font-size:1.06rem;letter-spacing:-0.02em;color:#15140F}
+  main .wrap{padding-top:clamp(2.8rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem)}
+  h1{font-family:'Noto Serif KR',serif;margin:0;font-size:clamp(2rem,6vw,3rem);font-weight:600;line-height:1.25;letter-spacing:-0.035em}
+  .lead{margin:1.2rem 0 0;color:#26241E}
+  .phone{display:none;margin:2rem 0 0;padding:1rem 1.2rem;border:1px solid #D4CCBA;border-radius:2px;background:#FFFDF7}
+  .phone p{margin:0}
+  .phone .url{font-family:'IBM Plex Mono',monospace;font-size:.95rem;word-break:break-all}
+  .phone button{margin-top:.7rem;padding:.55rem 1.1rem;border-radius:2px;border:1px solid #1E4F38;background:transparent;color:#1E4F38;font:inherit;font-size:.9rem;cursor:pointer}
+  .btn{display:inline-block;margin-top:2rem;padding:.95rem 1.8rem;border-radius:2px;background:#1E4F38;color:#F7F4ED;font-size:1rem;font-weight:500;border:1px solid #1E4F38}
+  .btn:hover{background:#15140F;border-color:#15140F;color:#F7F4ED}
+  .ver{margin:.9rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.8rem;line-height:1.7;color:#6B6659;word-break:break-all}
+  h2{font-family:'Noto Serif KR',serif;margin:3rem 0 .8rem;font-size:1.3rem;font-weight:600;letter-spacing:-0.02em}
+  ol{margin:0;padding-left:1.4rem}
+  li{margin:.3rem 0}
+  .note{margin:1rem 0 0;font-size:.92rem;color:#3E3A32}
+  footer{border-top:1px solid #E5DFD1;font-size:.9rem;color:#6B6659}
+  footer .wrap{padding-top:1.6rem;padding-bottom:2.4rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+  footer a{color:#6B6659}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="https://guardpact.app/" class="logo">GuardPact</a></div></header>
+<main><div class="wrap">
+  <h1>Windows 앱 내려받기</h1>
+  <p class="lead">PC 를 함께 관리하려면 그 PC 에 GuardPact Windows 앱을 설치하세요. 아래 단추는 늘 최신 설치 파일로 이어집니다.</p>
+
+  <div class="phone" id="phone">
+    <p>휴대폰에서 이 쪽을 열었어요. 설치할 <strong>PC 에서 이 주소를 여세요</strong>.</p>
+    <p class="url" id="url">guardpact.app/windows</p>
+    <button type="button" id="copy">주소 복사</button>
+  </div>
+
+  <a class="btn" href="https://api.guardpact.app/download/windows">Windows 앱 내려받기</a>
+  <p class="ver" id="ver"></p>
+
+  <h2>설치 방법</h2>
+  <ol>
+    <li>받은 설치 파일(GuardPact-Setup-….exe)을 실행합니다.</li>
+    <li>「이 앱이 디바이스를 변경하도록 허용하시겠어요?」 창에서 「예」를 누릅니다(관리자 권한 설치).</li>
+    <li>설치가 끝나면 휴대폰 앱과 같은 계정으로 로그인합니다.</li>
+  </ol>
+  <p class="note">64비트 Windows 용입니다. 설치한 뒤에는 앱이 새 판을 스스로 받아 업데이트합니다.</p>
+</div></main>
+<footer><div class="wrap">
+  <a href="https://guardpact.app/">홈</a>
+  <a href="https://guardpact.app/privacy.html">개인정보처리방침</a>
+  <a href="https://guardpact.app/terms.html">이용약관</a>
+  <a href="https://guardpact.app/location-terms.html">위치기반서비스 이용약관</a>
+</div></footer>
+<script>
+(function () {
+  // 휴대폰 · 태블릿이면 「PC 에서 여세요」 안내. 단추는 감추지 않는다(판정이 틀려도 받을 수 있게).
+  var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    (window.matchMedia && window.matchMedia('(pointer:coarse)').matches && !/Windows NT/i.test(navigator.userAgent));
+  if (mobile) document.getElementById('phone').style.display = 'block';
+  document.getElementById('copy').addEventListener('click', function () {
+    var text = 'https://guardpact.app/windows', btn = this;
+    function done() { btn.textContent = '복사했어요'; }
+    function select() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('url'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select);
+    else select();
+  });
+  // 판 번호 · SHA-256 — 표시용. 못 읽으면 줄을 비워 둔다(단추는 서버 고정 주소라 그대로 동작한다).
+  if (window.fetch) {
+    fetch('https://api.guardpact.app/app-version-policy?platform=windows', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (p) {
+        if (!p || !p.latestVersion) return;
+        var line = '최신 판 ' + p.latestVersion;
+        if (p.downloadSha256) line += ' · SHA-256 ' + p.downloadSha256;
+        document.getElementById('ver').textContent = line;
+      })
+      .catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>
